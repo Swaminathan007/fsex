@@ -32,7 +32,8 @@ app.post("/",(req,res)=>{
 });
 app.put("/:idx",(req,res)=>{
     let idx = parseInt(req.params.idx);
-    let ele = parseInt(req.body.ele);
+    let ele = parseInt(req.body.num);
+    console.log(ele)
     arr[idx] = ele;
     res.json({message:"Element updated",arr:arr});
 });
@@ -41,4 +42,4 @@ app.delete("/:idx",(req,res)=>{
     arr.splice(idx,1);
     res.json({message:"Element deleted",arr:arr});
 })
-app.listen(5000,()=>{console.log("App listening on 5000");})
+app.listen(5000,()=>{console.log("App listening on 5000");});
